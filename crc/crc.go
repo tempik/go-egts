@@ -1,8 +1,8 @@
 package crc
 
 import (
-	"g_service_bus/pkgs/egts/crc16"
-	"g_service_bus/pkgs/egts/crc8"
+	"github.com/sigurn/crc16"
+	"github.com/sigurn/crc8"
 )
 
 //Crc --

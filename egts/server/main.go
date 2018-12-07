@@ -2,13 +2,17 @@ package main
 
 import (
 	"fmt"
+	"os"
 	"net"
+	"github.com/LdDl/go-egts/egts/paсket"
 )
 
-func main() {
+var PORT = os.Getenv("PORT")
 
-	fmt.Println("Launching server...")
-	ln, _ := net.Listen("tcp", ":8081")
+func main() {
+	listenAddr := fmt.Sprintf("0.0.0.0:%s", PORT)
+	fmt.Println("Launching server...",listenAddr)
+	ln, _ := net.Listen("tcp", listenAddr)
 	conn, _ := ln.Accept()
 	defer conn.Close()
 	data := make([]byte, 65535)
